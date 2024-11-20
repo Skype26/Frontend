@@ -1,0 +1,73 @@
+.container_calendar {
+    width: 360px;
+    height: 550px;
+}
+
+.container_change_month span {
+    padding: 0px;
+    color: #022786;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-right: 150px;
+}
+
+.container_change_month button {
+    margin: auto 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.container_change_month button img {
+    width: 20px;
+    height: 20px;
+}
+
+.container_weedays {
+    height: 40px;
+    display: flex;
+    margin: 0px auto;
+}
+.week_days_item {
+    font-family: 'Montserrat';
+    width: calc(100% / 7);
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.week_days_item:hover {
+    color: #506CF5;
+}
+
+.container_days {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px;
+}
+.container_days span {
+    color: #999999;
+    height: 20px;
+    margin-bottom: 25px;
+}
+.prev_days {
+    /*opacity: 0.5;*/
+    opacity: 0;
+}
+/*.container_days .today:after {
+    content: "";
+    width: 19px;
+    height: 19px;
+    background: #E3F5F5;
+    position: absolute;
+    border-radius: 50%;
+    border: 6px solid #E3F5F5;
+    opacity: 0.6;
+    margin: -5px 0px 0px 1px;
+}*/
+
+
+
+

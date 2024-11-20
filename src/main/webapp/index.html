@@ -44,7 +44,16 @@
                         document.getElementById('g-recaptcha-response').value = token;
 
                         // Ahora puedes enviar el formulario
-                        document.getElementById('loginForm').submit();
+                        //document.getElementById('loginForm').submit();
+                        
+                        const user = document.getElementById('user').value;
+                        const pass = document.getElementById('pass').value;
+
+                        if (user === pass) {
+                            window.location.href = 'principal1.html';
+                        } else {
+                            alert('Datos incorrectos. Por favor, inténtalo de nuevo.');
+                        }
                     });
                 });
             });

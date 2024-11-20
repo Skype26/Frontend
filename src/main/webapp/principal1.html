@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Reserva tu Cita</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
         <link href="css/EstiloPrincipal.css" rel="stylesheet" type="text/css"/>
+        <link href="css/calendario.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header class="header">
@@ -29,7 +31,7 @@
                     <!-- Servicio 1 -->
                     <div class="item">
                         <div class="service-icon">
-                            <img src="img/estetoscopio.png" alt=""/>
+                            <img src="img/medicina.png" alt=""/>
                         </div>
                         <h3>Medicina General</h3>
                     </div>
@@ -57,40 +59,81 @@
                     <!-- Servicio 5 -->
                     <div class="item">
                         <div class="service-icon">
-
+                            <img src="img/laboratorio.png" alt=""/>
                         </div>
                         <h3>Laboratorio</h3>
                     </div>
                     <!-- Servicio 6 -->
                     <div class="item">
                         <div class="service-icon">
-
+                            <img src="img/rayos.png" alt=""/>
                         </div>
                         <h3>Rayos X</h3>
                     </div>
                 </div>
-                <div class="calendario-horario-contenedor">
-                    <div class="calendario-contenedor">
-                        <h2>Calendario</h2>
-                        <div class="item">
-                            <h3>Noviembre</h3>
+                <div class="calendario-contenedor">
+                    <h2>Calendario</h2>
+                    <div class="container_calendar">
+                        <div class="container_change_month">
+                            <span id="text_month_02">Null</span>
+                            <button id="last_month"><img src="img/izquierda.png" alt=""/></button>
+                            <button id="next_month"><img src="img/derecha.png" alt=""/></button>
+                        </div>
+                        <div class="container_weedays">
+                            <span class="week_days_item">D</span>
+                            <span class="week_days_item">L</span>
+                            <span class="week_days_item">M</span>
+                            <span class="week_days_item">MI</span>
+                            <span class="week_days_item">J</span>
+                            <span class="week_days_item">V</span>
+                            <span class="week_days_item">S</span>
+                        </div>
+                        <div class="container_days">
+                            <span class="week_days_item item_day"></span>
                         </div>
                     </div>
                 </div>
-
+                <!-- Contenedor del horario -->
+                <div class="horario-contenedor">
+                    <h2>Horario</h2>
+                    <table class="horario-table">
+                        <tr>
+                            <td class="horario-item">9:00</td>
+                        </tr>
+                        <tr>
+                            <td class="horario-item">9:30</td>
+                        </tr>
+                        <tr>
+                            <td class="horario-item">10:00</td>
+                        </tr>
+                        <tr>
+                            <td class="horario-item">10:30</td>
+                        </tr>
+                        <tr>
+                            <td class="horario-item">11:00</td>
+                        </tr>
+                        <tr>
+                            <td class="horario-item">11:30</td>
+                        </tr>
+                    </table>
+                    <button class="horario-boton">Reservar</button>
+                </div>
             </main>
         </div>
         <script>
-        function toggleCollapse() {
-            const collapseContent = document.getElementById('collapse-content');
-            const iconRight = document.querySelector('.icon-right');
+            function toggleCollapse() {
+                const collapseContent = document.getElementById('collapse-content');
+                const iconRight = document.querySelector('.icon-right');
 
-            // Alterna la clase "open" en el contenido
-            collapseContent.classList.toggle('open');
+                // Alterna la clase "open" en el contenido
+                collapseContent.classList.toggle('open');
 
-            // Alterna la clase "rotated" en el ícono derecho
-            iconRight.classList.toggle('rotated');
-        }
-    </script>
+                // Alterna la clase "rotated" en el ícono derecho
+                iconRight.classList.toggle('rotated');
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/calendario.js"></script>
+
     </body>
 </html>

@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif, Montserrat;
     margin: 0;
     padding: 0;
     background-color: #f6f8fd;
@@ -14,25 +14,26 @@ body {
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
 }
 
 h1 {
+    font-family: 'Montserrat';
     font-size: 34px;
     font-weight: bold;
     color: #0248A2;
 }
 
 h2 {
+    font-family: 'Montserrat';
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
 h3 {
+    font-family: 'Montserrat';
     color: #022786;
     font-size: 20px;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -121,16 +122,13 @@ h3 {
 /* Contenedor de servicios*/
 .servicios-contenedor {
     background: white;
-    border-radius: 10px;
-    padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
+    padding: 30px;
     flex-direction: column;
     width: 316px;
-    height: 642px;
     border-radius: 50px;
     gap: 15px;/* Espaciado entre servicios */
-    padding: 30px;
 }
 
 .item {
@@ -156,30 +154,58 @@ h3 {
     width: 24px;
     height: 24px;
 }
-
-
+    
 /* Contenedor de Calendario y Horario*/
 
-.calendario-horario-contenedor {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    width: 715px;
-    height: 642px;
-    flex-direction: column;
-    gag: 10px;
-    padding: 30px;
-    border-radius: 50px;
-}
-
 .calendario-contenedor {
-    width: 429px;
+    background: white;
     height: 642px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 10px;
+    border-radius: 50px 0 0 50px;
 }
 
 .horario-contenedor {
-    width: 286px;
+    background: white;
+    width: 250px;
     height: 642px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 30px;
+    padding-left: 50px;
+    border-radius: 0 50px 50px 0;
+}
+
+.horario-table {
+    width: 200px;
+    height: 342px;
+    border-collapse: collapse; /* Elimina el espacio entre bordes de las celdas */
+}
+
+.horario-item {
+    border: 1px solid #d3d3d3; /* Bordes de las celdas */
+    padding: 10px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+.horario-boton {
+    background-color: #032756;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: white;
+    border: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.horario-boton:hover {
+    background-color: #021d42; /* Más oscuro al pasar el mouse */
 }
