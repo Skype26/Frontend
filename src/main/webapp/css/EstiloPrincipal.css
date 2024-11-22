@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif, Montserrat;
-    margin: 0;
     padding: 0;
+    margin: 0;
     background-color: #f6f8fd;
 }
 
@@ -75,7 +75,6 @@ h3 {
     transition: background-color 0.3s ease;
     gap: 10px; /* Espacio entre los elementos */
 }
-
 .collapse-button:hover {
     background-color: #021d42; /* Color más oscuro al pasar el mouse */
 }
@@ -85,7 +84,6 @@ h3 {
     width: 30px; /* Tamaño del ícono */
     height: 30px;
 }
-
 .icon-right {
     margin-left: 5px;
     transition: transform 0.3s ease; /* Transición suave para el giro */
@@ -105,19 +103,15 @@ h3 {
     z-index: 1000;
     width: 200px;
     height: 192px;
-    padding: 0; 
+    padding: 0;
 }
-
 .collapse-content.open {
     max-height: 200px; /* Altura máxima cuando está desplegado (ajusta según el contenido) */
     padding: 10px 20px; /* Se muestra el padding al expandirse */
 }
-
-/* Ícono girado */
 .icon-right.rotated {
     transform: rotate(180deg); /* Giro de 180° */
 }
-
 
 /* Contenedor de servicios*/
 .servicios-contenedor {
@@ -130,13 +124,11 @@ h3 {
     border-radius: 50px;
     gap: 15px;/* Espaciado entre servicios */
 }
-
 .item {
     display: flex;
     align-items: center; /* Alineación vertical centrada */
     gap: 15px; /* Espaciado entre ícono y texto */
 }
-
 /* Elipses de los íconos */
 .service-icon {
     width: 48px;
@@ -148,15 +140,13 @@ h3 {
     border-radius: 50%; /* Hace el contenedor redondo */
     overflow: hidden; /* Recorta el ícono si es más grande */
 }
-
 /* Imagen dentro del ícono */
 .service-icon img {
     width: 24px;
     height: 24px;
 }
-    
-/* Contenedor de Calendario y Horario*/
 
+/* Contenedor de Calendario y Horario*/
 .calendario-contenedor {
     background: white;
     height: 642px;
@@ -176,13 +166,6 @@ h3 {
     padding-left: 50px;
     border-radius: 0 50px 50px 0;
 }
-
-.horario-table {
-    width: 200px;
-    height: 342px;
-    border-collapse: collapse; /* Elimina el espacio entre bordes de las celdas */
-}
-
 .horario-item {
     border: 1px solid #d3d3d3; /* Bordes de las celdas */
     padding: 10px;
@@ -190,7 +173,53 @@ h3 {
     font-family: 'Montserrat';
     font-weight: bold;
 }
-
+.horario-table {
+    width: 200px;
+    height: 342px;
+    border-collapse: collapse; /* Elimina el espacio entre bordes de las celdas */
+    border-spacing: 0; /* Asegura bordes pegados */
+    overflow: hidden;
+    position: relative;
+}
+/* Cabecera de la tabla */
+.horario-table thead tr {
+    display: block; /* Para separar la cabecera del cuerpo */
+    background-color: #f6f8fd;
+}
+.horario-table thead th {
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+/* Cuerpo de la tabla con scroll */
+.horario-table tbody {
+    display: block; /* Cuerpo independiente para scroll */
+    height: 342px; /* Tamaño fijo */
+    overflow-y: auto; /* Scroll vertical */
+}
+/* Oculta scroll en navegadores WebKit (Chrome, Edge, Safari) */
+.horario-table tbody::-webkit-scrollbar {
+    display: none;
+}
+.horario-table tbody td {
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 10px;
+    width: 200px;
+    height: 47px; /* Altura fija para cada celda */
+    line-height: 47px; /* Alinea el texto verticalmente */
+}
+.horario-table tbody td:hover {
+    background-color: #AFE5E8; /* Color de fondo al pasar el mouse */
+}
+/* Estilo para la celda seleccionada */
+.horario-table tbody td.selected {
+    background-color: #4FD4D6; /* Color de fondo al seleccionarse */
+    color: white; /* Texto blanco */
+}
 .horario-boton {
     background-color: #032756;
     width: 200px;
@@ -205,7 +234,6 @@ h3 {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .horario-boton:hover {
     background-color: #021d42; /* Más oscuro al pasar el mouse */
 }
