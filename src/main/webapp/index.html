@@ -1,63 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bienestar Universitario</title>
-        <link href="css/EstiloLogin.css" rel="stylesheet" type="text/css"/>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c"></script>
-    </head>
-    <body>
-        <div class="container">
 
-            <div class="left-panel">
-                <div class="content">
-                    <img src="img/medicine.png" alt="" class="icon"/>
-                    <h2>BIENESTAR UNIVERSITARIO</h2>
-                    <p class="subtext">Nos preocupamos por la salud de nuestros estudiantes</p>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Universitario</title>
+    <link href="css/EstiloLogin.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c" async
+        defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="content">
+                <img src="img/medicine.png" alt="Icono Medicina" class="icon" />
+                <h2>BIENESTAR UNIVERSITARIO</h2>
+                <p class="subtext">Nos preocupamos por la salud de nuestros estudiantes</p>
             </div>
-
-            <div class="right-panel">
-                <div class="logo">
-                    <img src="img/Logo y titulo.png" alt="Logo Universidad">
-                </div>
-                <form id="loginForm" action="tu-servidor-de-autenticacion" method="POST" class="login-form">
-                    <h3>Usuario</h3>
-                    <input id="user" type="text" placeholder="Nombre de usuario">
-                    <h3>Contraseña</h3>
-                    <input id="pass" type="password" placeholder="Introduce contraseña">
-                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-                    <button type="submit">Iniciar Sesión</button>
-                    <a href="#" class="forgot-password">Olvidaste tu contraseña</a>
-                </form>
-            </div>
-
         </div>
-        <script>
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Detiene el envío del formulario
-                
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c', {action: 'login'}).then(function (token) {
-                        // Agrega el token de reCAPTCHA al formulario
-                        document.getElementById('g-recaptcha-response').value = token;
+        <div class="right-panel">
+            <div class="logo">
+                <img src="img/Logo y titulo.png" alt="Logo Universidad">
+            </div>
+            <form id="loginForm" action="tu-servidor-de-autenticacion" method="POST" class="login-form">
+                <h3>Usuario</h3>
+                <input id="user" type="text" name="username" placeholder="Nombre de usuario" required>
+                <h3>Contraseña</h3>
+                <input id="pass" type="password" name="password" placeholder="Introduce contraseña" required>
+                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                <button type="submit">Iniciar Sesión</button>
+                <a href="#" class="forgot-password">Olvidaste tu contraseña</a>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./security/auth.js"></script>
+    <script type="module">
+        import authModule from './security/auth.js';
+        authModule.init();
+    </script>
+</body>
 
-                        // Ahora puedes enviar el formulario
-                        //document.getElementById('loginForm').submit();
-                        
-                        const user = document.getElementById('user').value;
-                        const pass = document.getElementById('pass').value;
-
-                        if (user === pass) {
-                            window.location.href = 'principal1.html';
-                        } else {
-                            alert('Datos incorrectos. Por favor, inténtalo de nuevo.');
-                        }
-                    });
-                });
-            });
-        </script>
-
-    </body>
 </html>
