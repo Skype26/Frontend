@@ -1,4 +1,4 @@
-/* General Styles xa*/
+/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -27,9 +27,18 @@ body {
   align-items: center;
   text-align: center;
   color: white;
+  padding: 20px;
 }
 
-.left-panel .icon { /* Imagen del hospital */
+.left-panel .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.left-panel .icon {
   width: 300px;
   margin-bottom: 20px;
 }
@@ -37,14 +46,20 @@ body {
 .left-panel h2 {
   font-size: 24px;
   margin: 0 0 10px;
-  color: white; /* BIENESTAR UNIVERSITARIO permanece blanco */
+  color: white;
 }
 
-.left-panel .subtext { 
-  font-size: 16px;
-  line-height: 1.5;
+.left-panel .subtext {
+  font-size: 18px; /* Tamaño de fuente más grande */
+  line-height: 1.3; /* Ajuste de espacio entre las líneas */
   margin: 0;
-  color: #032756; 
+  color: #032756;
+  font-weight: normal; /* Quitar la negrita */
+}
+
+.left-panel .subtext span {
+  display: inline-block; /* Para evitar separación excesiva */
+  margin: 0; /* Elimina margen adicional */
 }
 
 /* Right Panel */
@@ -58,24 +73,16 @@ body {
   align-items: center;
 }
 
-.right-panel .logo img { /* Imagen de la universidad */
+.right-panel .logo img {
   width: 250px;
   margin-bottom: 20px;
 }
 
 .login-form h3 {
-  font-size: 20px;
-  margin: 15px 0 5px;
+  font-size: 16px;
+  margin-bottom: 5px; /* Espacio entre el título y el cuadro */
   color: #032756;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+  text-align: left; /* Alineado a la izquierda */
 }
 
 .login-form button {
@@ -96,8 +103,8 @@ body {
 
 .forgot-password {
   display: block;
-  text-align: center; /* Centrar el texto */
-  margin-top: 30px; /* Ajusta el espacio más abajo */
+  text-align: center;
+  margin-top: 30px;
   font-size: 12px;
   color: #555;
   text-decoration: none;
@@ -105,4 +112,71 @@ body {
 
 .forgot-password:hover {
   text-decoration: underline;
+}
+.masked {
+    font-family: 'password'; /* Usa una fuente personalizada que muestre puntos */
+    -webkit-text-security: disc; /* Webkit browsers */
+    text-security: disc; /* CSS3 Draft for other browsers */
+}   
+
+
+/* Contenedor de los inputs */
+.input-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 350px;
+  padding: 10px 45px; /* Ajuste de padding para íconos */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Barra de Separación dentro del campo */
+.separator-bar {
+  position: absolute;
+  left: 40px; /* Coloca la barra después del ícono */
+  height: 60%; /* Hace que la barra sea más pequeña (no llena toda la altura) */
+  width: 2px;
+  background-color: #aaa; /* Color gris más suave */
+  top: 20%; /* Coloca la barra centrada verticalmente en el campo */
+}
+
+/* Ícono dentro del input */
+.input-container .input-icon {
+  position: absolute;
+  left: 15px; /* Ajuste de posición */
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 2; /* Asegura que el ícono esté encima de otros elementos */
+}
+
+/* Ícono del ojo */
+.input-container .input-icon-eye {
+  position: absolute;
+  right: 15px; /* Ajuste de posición */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 2; /* Asegura que el ícono esté encima de otros elementos */
+}
+
+.input-container .input-icon-eye:hover {
+  opacity: 0.7;
+}
+
+/* Estilo cuando el input está enfocado */
+.input-container input:focus {
+  outline: none;
+  border: 2px solid #032756;
+  box-shadow: 0 0 5px #032756;
 }

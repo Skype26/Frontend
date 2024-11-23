@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bienestar Universitario</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
         <link href="css/EstiloLogin.css" rel="stylesheet" type="text/css"/>
         <script src="https://www.google.com/recaptcha/api.js?render=6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c"></script>
     </head>
@@ -12,42 +14,56 @@
 
             <div class="left-panel">
                 <div class="content">
-                    <img src="img/medicine.png" alt="" class="icon"/>
+                    <img src="img/Logo-Medicina.png" alt="Bienestar Universitario" class="icon">
                     <h2>BIENESTAR UNIVERSITARIO</h2>
-                    <p class="subtext">Nos preocupamos por la salud de nuestros estudiantes</p>
+                    <p class="subtext">
+                        <span>Nos preocupamos por la salud de</span><br>
+                        <span>nuestros estudiantes</span>
+                    </p>
                 </div>
             </div>
 
+            <!-- Panel Derecho -->
             <div class="right-panel">
                 <div class="logo">
                     <img src="img/Logo y titulo.png" alt="Logo Universidad">
                 </div>
-                <form id="loginForm" action="tu-servidor-de-autenticacion" method="POST" class="login-form">
+                <form id="loginForm" class="login-form" onsubmit="return validateForm()">
                     <h3>Usuario</h3>
-                    <input id="user" type="text" placeholder="Nombre de usuario">
+                    <div class="input-container">
+                        <img src="img/Logo.png" alt="Usuario" class="input-icon">
+                        <input type="text" id="username" placeholder="Nombre de usuario">
+                        <div class="separator-bar"></div>
+                    </div>
+
                     <h3>Contraseña</h3>
-                    <input id="pass" type="password" placeholder="Introduce contraseña">
-                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                    <div class="input-container">
+                        <img src="img/Candado.png" alt="Candado" class="input-icon">
+                        <input type="text" id="password" placeholder="Introduce contraseña">
+                        <img src="img/ojo.png" alt="Mostrar/Ocultar Contraseña" class="input-icon-eye" onclick="togglePasswordVisibility()">
+                        <div class="separator-bar"></div>
+                    </div>
+
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                     <button type="submit">Iniciar Sesión</button>
                     <a href="#" class="forgot-password">Olvidaste tu contraseña</a>
                 </form>
+
             </div>
 
         </div>
         <script>
             document.getElementById('loginForm').addEventListener('submit', function (event) {
                 event.preventDefault(); // Detiene el envío del formulario
-                
+
                 grecaptcha.ready(function () {
                     grecaptcha.execute('6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c', {action: 'login'}).then(function (token) {
                         // Agrega el token de reCAPTCHA al formulario
                         document.getElementById('g-recaptcha-response').value = token;
 
-                        // Ahora puedes enviar el formulario
-                        //document.getElementById('loginForm').submit();
-                        
-                        const user = document.getElementById('user').value;
-                        const pass = document.getElementById('pass').value;
+                        // Obtén los valores de usuario y contraseña
+                        const user = document.getElementById('username').value;
+                        const pass = document.getElementById('password').value;
 
                         if (user === pass) {
                             window.location.href = 'principal1.html';
@@ -58,6 +74,25 @@
                 });
             });
         </script>
+        <script>
+            //este metodo solo cambia el type de la caja de texto, para el efecto de una caja de password tienes que usar un css para enmascarar la contraseña
+            // Función para alternar la visibilidad de la contraseña 
+            /*function togglePasswordVisibility() {
+             const passwordInput = document.getElementById('password');
+             const eyeIcon = document.querySelector('.input-icon-eye');
+             if (passwordInput.type === 'password') {
+             passwordInput.type = 'text';
+             eyeIcon.src = 'img/visible.png'; // Cambia a un icono de "ojo abierto"
+             } else {
+             passwordInput.type = 'password';
+             eyeIcon.src = 'img/ojo.png'; // Vuelve al icono de "ojo cerrado"
+             }
+             }*/
 
+            //metodo que usa la configuracion css para cambiar las letras por puntos y asi enmascarar la contraseña 
+
+        </script>
+        <script src="js/index.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 </html>
