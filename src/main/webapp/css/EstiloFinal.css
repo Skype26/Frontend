@@ -1,0 +1,207 @@
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye logo y botón a los extremos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 69px;
+    width: 209px;
+}
+
+/* Collapse */
+.collapse-button {
+    display: flex; /* Flexbox para alinear elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye los elementos */
+    background-color: #032756;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 117px;
+    height: 56px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+.collapse-button:hover {
+    background-color: #021d42; /* Color más oscuro al pasar el mouse */
+}
+
+/* Íconos */
+.icon-left, .icon-right {
+    width: 30px; /* Tamaño del ícono */
+    height: 30px;
+}
+
+.icon-right {
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Transición suave para el giro */
+}
+
+/* Collapse (contenido desplegable) */
+.collapse-content {
+    position: absolute; /* Para colocarlo debajo del botón */
+    top: 100%; /* Justo debajo del botón */
+    right: 75px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-height: 0; /* Oculto inicialmente */
+    overflow: hidden; /* Oculta el contenido cuando está cerrado */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Animación */
+    z-index: 1000;
+    width: 200px;
+    height: 192px;
+    padding: 0;
+}
+
+.collapse-content.open {
+    max-height: 200px; /* Altura máxima cuando está desplegado */
+    padding: 10px 20px; /* Se muestra el padding al expandirse */
+}
+
+/* Ícono girado */
+.icon-right.rotated {
+    transform: rotate(180deg); /* Giro de 180° */
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    font-size: 30px;
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: left; /* Alineación a la izquierda */
+    color: #032756; /* Color solicitado */
+}
+
+/* Elimina la línea divisoria */
+.linea-divisoria {
+    display: none; /* Elimina la línea */
+}
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #0046ad;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.info-cita {
+    display: flex;
+    gap: 30px;
+}
+
+.informacion-personal, .detalles-cita {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 35px; /* Esquinas redondeadas ajustadas */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.informacion-personal {
+    width: 690px;
+    height: 516px;
+}
+
+.detalles-cita {
+    width: 400px;
+    height: 354px;
+}
+
+form .row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+form .row.full-width {
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 280px;
+    height: 50px;
+}
+
+textarea {
+    width: 589px;
+    height: 130px;
+    resize: none;
+}
+
+/* Alineación de los datos de la fecha, hora y servicio */
+.detalle {
+    text-align: right; /* Alinea contenido a la derecha */
+}
+
+.detalle p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Botón confirmar */
+.boton-contenedor {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 30px; /* Ajuste para mantener espacio */
+}
+
+.confirmar-btn {
+    background-color: #0046ad;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 327px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.confirmar-btn:hover {
+    background-color: #003a8f;
+}

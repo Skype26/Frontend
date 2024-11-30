@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos Personales</title>
+  <link rel="stylesheet" href="css/EstiloFinal.css">
+</head>
+<body>
+  <!-- Barra de menú -->
+  <header class="header">
+    <div class="header-content">
+      <img src="img/Logo y titulo.png" alt="Logo" class="logo">
+      <button class="collapse-button" onclick="toggleCollapse()">
+        <img src="img/icono_usuario.png" alt="Icono usuario" class="icon-left">
+        <img src="img/icono_desplegable.PNG" alt="Icono desplegable" class="icon-right">
+      </button>
+
+      <!-- Contenido desplegable -->
+      <div id="collapse-content" class="collapse-content">
+        <p></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="container">
+    <h1>DATOS PERSONALES</h1>
+    <div class="info-cita">
+      <div class="informacion-personal">
+        <h2 class="titulo-seccion">Información Personal</h2>
+        <form>
+          <div class="row">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" placeholder="">
+            </div>
+            <div>
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" placeholder="">
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="">
+            </div>
+            <div>
+              <label for="celular">Celular</label>
+              <input type="tel" id="celular" placeholder="">
+            </div>
+          </div>
+          <div class="row full-width">
+            <label for="comentarios">Nota o comentario (opcional)</label>
+            <textarea id="comentarios" placeholder=""></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="detalles-cita">
+        <h2 class="titulo-seccion">Detalles de la cita</h2>
+        <div class="detalle">
+          <p><strong>📅 Fecha:</strong> Miércoles, 20 de noviembre de 2024</p>
+          <p><strong>⏰ Hora:</strong> 09:00 AM</p>
+          <p><strong>🩺 Servicio:</strong> Medicina General</p>
+        </div>
+        <div class="boton-contenedor">
+          <button class="confirmar-btn">Confirmar</button>
+        </div>
+      </div>
+    </div>
+    <hr class="linea-divisoria">
+  </div>
+
+  <script>
+    function toggleCollapse() {
+      const content = document.getElementById('collapse-content');
+      const icon = document.querySelector('.icon-right');
+      content.classList.toggle('open');
+      icon.classList.toggle('rotated');
+    }
+  </script>
+</body>
+</html>
+
+
