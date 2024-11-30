@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif, Montserrat, Roboto, Inter;
+    padding: 0;
+    margin: 0;
+    background-color: #f6f8fd;
+}
+
+.container {
+    max-width: 1250px;
+    margin-left: 45px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+main {
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr;*/
+    display: flex; /* Coloca los elementos en fila */
+    /*margin: 0;  Elimina márgenes exteriores del contenedor 
+    padding: 0; /* Asegúrate de que no haya relleno en el contenedor */
+}
+
+h1 {
+    font-family: 'Montserrat';
+    font-size: 34px;
+    font-weight: bold;
+    color: #0248A2;
+}
+
+h2 {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-family: 'Montserrat';
+    color: #022786;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-family: 'Roboto';
+    color: #032756;
+    font-size: 30px;
+    margin-bottom: -7px;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye logo y botón a los extremos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 69px;
+    width: 209px;
+}
+
+/* Collapse */
+.collapse-button {
+    display: flex; /* Flexbox para alinear elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye los elementos */
+    background-color: #032756;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 117px;
+    height: 56px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Espacio entre los elementos */
+}
+.collapse-button:hover {
+    background-color: #021d42; /* Color más oscuro al pasar el mouse */
+}
+
+/* Íconos */
+.icon-left, .icon-right {
+    width: 30px; /* Tamaño del ícono */
+    height: 30px;
+}
+.icon-right {
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Transición suave para el giro */
+}
+
+/* Collapse (contenido desplegable) */
+.collapse-content {
+    position: absolute; /* Para colocarlo debajo del botón */
+    top: 100%;/* Justo debajo del botón */
+    right: 75px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-height: 0; /* Oculto inicialmente */
+    overflow: hidden; /* Oculta el contenido cuando está cerrado */
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Animación */
+    z-index: 1000;
+    width: 200px;
+    height: 192px;
+    padding: 0;
+}
+.collapse-content.open {
+    max-height: 200px; /* Altura máxima cuando está desplegado (ajusta según el contenido) */
+    padding: 10px 20px; /* Se muestra el padding al expandirse */
+}
+.icon-right.rotated {
+    transform: rotate(180deg); /* Giro de 180° */
+}
+
+.item {
+    display: flex;
+    align-items: center; /* Alineación vertical centrada */
+    gap: 15px; /* Espaciado entre ícono y texto */
+}

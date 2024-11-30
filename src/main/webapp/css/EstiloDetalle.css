@@ -1,0 +1,266 @@
+/* Contenedor de Información */
+.informacion-contenedor {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    height: 500px;
+    padding-left: 40px;
+    border-radius: 50px;
+    gap: 15px;/* Espaciado entre servicios */
+    margin-right: 50px;
+}
+
+.linea {
+    width: 590px;
+    height: 1px;
+    background-color: #d3d3d3; /* Gris claro */
+}
+.linea-detalle {
+    width: 310px;
+    height: 1px;
+    background-color: #d3d3d3;
+}
+
+/* Estilo para el formulario */
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Dos columnas */
+    gap: 10px;
+}
+
+/* Estilo para cada campo del formulario */
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-family: 'Roboto';
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.campo input,
+.campo textarea {
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.campo input {
+    width: 240px;
+    height: 45px;
+}
+
+.campo textarea {
+    width: 570px;
+    height: 140px;
+    resize: none;
+}
+
+/* Ajustar para pantallas pequeñas */
+@media (max-width: 768px) {
+    .formulario {
+        grid-template-columns: 1fr;  /* Una sola columna */
+    }
+}
+
+/*.item {
+    
+    display: flex;
+    align-items: center;
+    
+    
+
+}*/
+
+.icon img {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    text-align: right;
+    word-wrap: break-word; 
+}
+
+
+/* Contenedor principal */
+.detalle-contenedor {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-bottom: 12px;
+    width: 320px;
+    height: 350px;
+    border-radius: 50px;
+    gap: 15px; /* Espacio entre los elementos */
+    align-items: stretch;
+}
+
+
+
+/* Estilo para cada fila */
+.detalle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia ícono + título y la descripción */
+    gap: 10px; /* Espacio entre ícono y texto */
+}
+
+/* Estilo para la sección izquierda */
+.detalle-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre ícono y texto */
+}
+
+/* Íconos */
+.detalle-izquierda i {
+    color: #0056b3; /* Azul para los íconos */
+}
+
+/* Texto de la izquierda (Fecha, Hora, etc.) */
+.detalle-izquierda span {
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bold;
+    color: #022786; /* Azul para el texto */
+}
+
+/* Descripción alineada a la derecha */
+.detalle-derecha {
+    padding-right: 15px;
+    padding-top: 10px;
+    font-family: "Roboto";
+    font-size: 16px;
+    color: #000; /* Negro para el texto */
+    text-align: right;
+    word-wrap: break-word; /* Permite cortar texto largo */
+}
+
+/* Botón Confirmar */
+.boton-confirmar {
+    background-color: #0237B7; /* Azul fuerte */
+    color: white;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 15px;
+    width: 310px; /* Botón de ancho completo */
+}
+
+.boton-confirmar:hover {
+    background-color: #003d8f; /* Azul más oscuro al pasar el mouse */
+}
+
+/* MODAL */
+/* Estilos del modal (inicialmente oculto) */
+/*.modal {
+    position: fixed;
+    top: -100%; / Fuera de la pantalla /
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);  /Fondo semitransparente /
+    transition: top 0.5s ease;  Deslizamiento suave 
+    z-index: 1000;  Asegura que el modal esté encima de otros elementos /
+    visibility: hidden; / Ocultar modal al inicio /
+    opacity: 0;
+}*/
+
+/* Fondo del modal separado */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* Fondo transparente al inicio */
+    transition: background-color 0.3s ease; /* Cambio suave del fondo */
+    z-index: 1000;
+    visibility: hidden; /* Ocultar modal al inicio */
+    opacity: 0;
+}
+
+/* Cuando el modal está activo */
+.modal.activo {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente al activarse */
+}
+
+/* Contenido del modal */
+.modal-contenido {
+    background: white;
+    width: 430px;
+    height: 230px;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    transform: translateY(-100%); /* Fuera de la pantalla */
+    transition: transform 0.5s ease; /* Deslizamiento suave */
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;*/
+}
+
+.modal.activo .modal-contenido {
+    transform: translateY(0); /* Posición centrada */
+}
+
+/* Imagen dentro del modal */
+.modal-imagen {
+    width: 150px;
+    height: 120px;
+}
+
+/* Título del modal */
+.modal-titulo {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 32px;
+    color: #032756;
+    margin-bottom: 10px;
+}
+
+/* Texto del modal */
+.modal-texto {
+    font-family: "Roboto";
+    font-size: 16px;
+    color: black;
+}
+
+/* Botón de cerrar */
+.modal-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

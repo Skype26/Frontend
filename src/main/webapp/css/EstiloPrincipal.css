@@ -1,118 +1,3 @@
-body {
-    font-family: Arial, sans-serif, Montserrat;
-    padding: 0;
-    margin: 0;
-    background-color: #f6f8fd;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-h1 {
-    font-family: 'Montserrat';
-    font-size: 34px;
-    font-weight: bold;
-    color: #0248A2;
-}
-
-h2 {
-    font-family: 'Montserrat';
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-h3 {
-    font-family: 'Montserrat';
-    color: #022786;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-/* Header */
-.header {
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribuye logo y botón a los extremos */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    height: 69px;
-    width: 209px;
-}
-
-/* Collapse */
-.collapse-button {
-    display: flex; /* Flexbox para alinear elementos en fila */
-    align-items: center; /* Centra verticalmente */
-    justify-content: space-between; /* Distribuye los elementos */
-    background-color: #032756;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 117px;
-    height: 56px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    gap: 10px; /* Espacio entre los elementos */
-}
-.collapse-button:hover {
-    background-color: #021d42; /* Color más oscuro al pasar el mouse */
-}
-
-/* Íconos */
-.icon-left, .icon-right {
-    width: 30px; /* Tamaño del ícono */
-    height: 30px;
-}
-.icon-right {
-    margin-left: 5px;
-    transition: transform 0.3s ease; /* Transición suave para el giro */
-}
-
-/* Collapse (contenido desplegable) */
-.collapse-content {
-    position: absolute; /* Para colocarlo debajo del botón */
-    top: 100%;/* Justo debajo del botón */
-    right: 75px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    max-height: 0; /* Oculto inicialmente */
-    overflow: hidden; /* Oculta el contenido cuando está cerrado */
-    transition: max-height 0.3s ease, padding 0.3s ease; /* Animación */
-    z-index: 1000;
-    width: 200px;
-    height: 192px;
-    padding: 0;
-}
-.collapse-content.open {
-    max-height: 200px; /* Altura máxima cuando está desplegado (ajusta según el contenido) */
-    padding: 10px 20px; /* Se muestra el padding al expandirse */
-}
-.icon-right.rotated {
-    transform: rotate(180deg); /* Giro de 180° */
-}
-
 /* Contenedor de servicios*/
 .servicios-contenedor {
     background: white;
@@ -120,9 +5,10 @@ h3 {
     display: flex;
     padding: 30px;
     flex-direction: column;
-    width: 316px;
+    width: 270px;
     border-radius: 50px;
     gap: 15px;/* Espaciado entre servicios */
+    margin-right: 15px;
 }
 .item {
     display: flex;
@@ -148,22 +34,22 @@ h3 {
 
 /* Contenedor de Calendario y Horario*/
 .calendario-contenedor {
+    margin-right: 0px;
     background: white;
-    height: 642px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 10px;
+    padding-left: 40px;
+    padding-right: 0px;
     border-radius: 50px 0 0 50px;
 }
 
 .horario-contenedor {
     background: white;
-    width: 250px;
-    height: 642px;
+    width: 220px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding-top: 30px;
-    padding-left: 50px;
+    padding-left: 25px;
+    padding-right: 0px;
     border-radius: 0 50px 50px 0;
 }
 .horario-item {
@@ -174,7 +60,7 @@ h3 {
     font-weight: bold;
 }
 .horario-table {
-    width: 200px;
+    width: 190px;
     height: 342px;
     border-collapse: collapse; /* Elimina el espacio entre bordes de las celdas */
     border-spacing: 0; /* Asegura bordes pegados */
@@ -207,8 +93,8 @@ h3 {
     text-align: center;
     font-family: 'Montserrat';
     font-weight: bold;
-    padding: 10px;
-    width: 200px;
+    padding: 5px;
+    width: 220px;
     height: 47px; /* Altura fija para cada celda */
     line-height: 47px; /* Alinea el texto verticalmente */
 }
@@ -222,7 +108,7 @@ h3 {
 }
 .horario-boton {
     background-color: #032756;
-    width: 200px;
+    width: 190px;
     height: 50px;
     font-size: 20px;
     font-weight: bold;
@@ -231,12 +117,64 @@ h3 {
     border: none;
     margin-top: 20px;
     padding: 10px 20px;
+    padding-bottom: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 .horario-boton:hover {
     background-color: #021d42; /* Más oscuro al pasar el mouse */
 }
+
+
+/* Contenedor Reserva-Servicios */
+/* Estilo inicial del contenedor de reserva (oculto) */
+.reserva-contenedor {
+    display: none; /* Oculto inicialmente */
+    width: 250px; /* Ancho del contenedor desplegable */
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0 50px 50px 0; /* Bordes redondeados */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación de despliegue */
+    transform: translateX(100%); /* Posicionado fuera de la vista inicialmente */
+    opacity: 0;
+    z-index: 200; /* Asegúrate de que esté encima de otros elementos */
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+/* Cuando esté activo, se despliega */
+.reserva-contenedor.active {
+    display: block; /* Muestra el contenedor */
+    transform: translateX(0); /* Lo posiciona en su lugar */
+    opacity: 1;
+}
+
+/* Ajusta el contenedor de horario para eliminar sus bordes */
+.horario-contenedor.no-border {
+    border-radius: 0; /* Sin bordes redondeados */
+}
+
+.boton-servicios {
+    display: flex; /* Flexbox para alinear elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye los elementos */
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 233px;
+    height: 56px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Espacio entre los elementos */ 
+    color: #022786;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
 
 /* Encabezado del perfil */
 .profile-header {
@@ -245,7 +183,6 @@ h3 {
     gap: 10px;
     margin-bottom: 10px;
 }
-
 /* Imagen del avatar */
 .profile-avatar {
     width: 50px;
@@ -254,32 +191,27 @@ h3 {
     object-fit: cover;
     border: 2px solid #ddd;
 }
-
 /* Nombre del usuario */
 .user-name {
     font-size: 20px;
     font:bold;
     color: #fff;
 }
-
 /* Línea separadora */
 hr {
     border: none;
     border-top: 1px solid #ddd;
     margin: 10px 0;
 }
-
 /* Opciones del menú */
 .profile-options {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .profile-options li {
     margin: 10px 0;
 }
-
 .profile-options li a {
     display: flex;
     align-items: center;
@@ -289,30 +221,24 @@ hr {
     gap: 10px;
     transition: color 0.3s ease;
 }
-
 .profile-options li a i {
     font-size: 16px;
     color: #555;
 }
-
 .profile-options li a:hover {
     color: #007bff;
 }
-
 .logout {
     color: #e63946;
 }
-
 .logout:hover {
     color: #d32f2f;
 }
-
 .icon {
     width: 25px; /* Ajusta el ancho del ícono */
     height: 25px; /* Ajusta la altura del ícono */
     vertical-align: middle; /* Asegura que el ícono esté alineado verticalmente con el texto */
 }
-
 .menu-item {
     display: flex; /* Asegura que el ícono y el texto estén en la misma línea */
     align-items: center; /* Centra verticalmente el contenido */
@@ -320,7 +246,6 @@ hr {
     color: #333; /* Ajusta el color del texto */
     font-size: 14px; /* Tamaño del texto */
 }
-
 .menu-item:hover {
     color: #007bff; /* Cambia el color del texto al pasar el cursor */
 }

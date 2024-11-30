@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bienestar Universitario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="css/EstiloDetalle.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <img src="img/Logo y titulo.png" alt="" class="logo"/>
+                <button class="collapse-button" onclick="toggleCollapse()">
+                    <img src="img/icono_usuario.png" alt="" class="icon-left"/>
+                    <img src="img/icono_desplegable.PNG" alt="" class="icon-right"/>
+                </button>
+
+                <!-- Contenido desplegable -->
+                <div id="collapse-content" class="collapse-content">
+                    <p></p>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <h1>DATOS PERSONALES</h1>
+            <main>
+                <div class="informacion-contenedor">
+                    <h4>Información Personal</h4>
+                    <div class="linea"></div>
+                    <div class="formulario">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" value="Camila">
+                        </div>
+                        <div class="campo">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" value="Vigo">
+                        </div>
+                        <div class="campo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="Camila@gmail.com">
+                        </div>
+                        <div class="campo">
+                            <label for="celular">Celular</label>
+                            <input type="text" id="celular" value="999113667">
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="comentarios">Nota o comentario (opcional)</label>
+                        <textarea id="comentarios" placeholder="Ingresar comentarios..."></textarea>
+                    </div>
+                </div>
+                <div class="detalle-contenedor">
+                    <h4>Detalles de la cita</h4>
+                    <div class="linea-detalle"></div>
+
+                    <!-- Elemento: Fecha -->
+                    <div class="detalle-item">
+                        <div class="detalle-izquierda icon">
+                            <img src="img/date.png" alt=""/>
+                            <span>Fecha</span>
+                        </div>
+                        <div class="detalle-derecha">
+                            Miércoles, 20 de noviembre de 2024
+                        </div>
+                    </div>
+
+                    <!-- Elemento: Hora -->
+                    <div class="detalle-item">
+                        <div class="detalle-izquierda icon">
+                            <img src="img/schedule.png" alt=""/>
+                            <span>Hora</span>
+                        </div>
+                        <div class="detalle-derecha">
+                            09:00 AM
+                        </div>
+                    </div>
+
+                    <!-- Elemento: Servicio -->
+                    <div class="detalle-item">
+                        <div class="detalle-izquierda icon">
+                            <img src="img/medical_services.png" alt=""/>
+                            <span>Servicio</span>
+                        </div>
+                        <div class="detalle-derecha">
+                            Medicina General
+                        </div>
+                    </div>
+
+                    <!-- Botón Confirmar -->
+                    <button class="boton-confirmar" id="btnConfirmar">Confirmar</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal" id="modal">
+                    <div class="modal-contenido">
+                        <button class="modal-cerrar" id="cerrar-modal">&times;</button>
+                        <img src="img/confirmacion.png" alt="" class="modal-imagen"/>
+                        <h2 class="modal-titulo">¡Felicidades!</h2>
+                        <p class="modal-texto">Cita registrada con éxito</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script>
+            // Selección de elementos
+            const abrirModal = document.getElementById("btnConfirmar");
+            const cerrarModal = document.getElementById("cerrar-modal");
+            const modal = document.getElementById("modal");
+
+            // Evento para abrir el modal
+            abrirModal.addEventListener("click", () => {
+                modal.classList.add("activo");
+            });
+
+            // Evento para cerrar el modal
+            cerrarModal.addEventListener("click", () => {
+                modal.classList.remove("activo");
+            });
+
+            // Cerrar modal al hacer clic fuera del contenido
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove("activo");
+                }
+            });
+        </script>
+    </body>
+</html>
