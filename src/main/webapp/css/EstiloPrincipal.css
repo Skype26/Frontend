@@ -237,3 +237,90 @@ h3 {
 .horario-boton:hover {
     background-color: #021d42; /* Más oscuro al pasar el mouse */
 }
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Imagen del avatar */
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+/* Nombre del usuario */
+.user-name {
+    font-size: 20px;
+    font:bold;
+    color: #fff;
+}
+
+/* Línea separadora */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* Opciones del menú */
+.profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-options li {
+    margin: 10px 0;
+}
+
+.profile-options li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.profile-options li a i {
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-options li a:hover {
+    color: #007bff;
+}
+
+.logout {
+    color: #e63946;
+}
+
+.logout:hover {
+    color: #d32f2f;
+}
+
+.icon {
+    width: 25px; /* Ajusta el ancho del ícono */
+    height: 25px; /* Ajusta la altura del ícono */
+    vertical-align: middle; /* Asegura que el ícono esté alineado verticalmente con el texto */
+}
+
+.menu-item {
+    display: flex; /* Asegura que el ícono y el texto estén en la misma línea */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-decoration: none; /* Elimina subrayados */
+    color: #333; /* Ajusta el color del texto */
+    font-size: 14px; /* Tamaño del texto */
+}
+
+.menu-item:hover {
+    color: #007bff; /* Cambia el color del texto al pasar el cursor */
+}

@@ -7,7 +7,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
         <link href="css/EstiloLogin.css" rel="stylesheet" type="text/css"/>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c"></script>        
     </head>
     <body>
         <div class="container">
@@ -48,51 +48,9 @@
                     <button type="submit">Iniciar Sesión</button>
                     <a href="#" class="forgot-password">Olvidaste tu contraseña</a>
                 </form>
-
             </div>
-
         </div>
-        <script>
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Detiene el envío del formulario
-
-                grecaptcha.ready(function () {
-                    grecaptcha.execute('6LdZP4IqAAAAAG2rlzTEZU_t4D6Y3xdTrH9XR89c', {action: 'login'}).then(function (token) {
-                        // Agrega el token de reCAPTCHA al formulario
-                        document.getElementById('g-recaptcha-response').value = token;
-
-                        // Obtén los valores de usuario y contraseña
-                        const user = document.getElementById('username').value;
-                        const pass = document.getElementById('password').value;
-
-                        if (user === pass) {
-                            window.location.href = 'principal1.html';
-                        } else {
-                            alert('Datos incorrectos. Por favor, inténtalo de nuevo.');
-                        }
-                    });
-                });
-            });
-        </script>
-        <script>
-            //este metodo solo cambia el type de la caja de texto, para el efecto de una caja de password tienes que usar un css para enmascarar la contraseña
-            // Función para alternar la visibilidad de la contraseña 
-            /*function togglePasswordVisibility() {
-             const passwordInput = document.getElementById('password');
-             const eyeIcon = document.querySelector('.input-icon-eye');
-             if (passwordInput.type === 'password') {
-             passwordInput.type = 'text';
-             eyeIcon.src = 'img/visible.png'; // Cambia a un icono de "ojo abierto"
-             } else {
-             passwordInput.type = 'password';
-             eyeIcon.src = 'img/ojo.png'; // Vuelve al icono de "ojo cerrado"
-             }
-             }*/
-
-            //metodo que usa la configuracion css para cambiar las letras por puntos y asi enmascarar la contraseña 
-
-        </script>
-        <script src="js/index.js" type="text/javascript"></script>
+        <script src="js/auth/login.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 </html>
