@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista Citas</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+        <link href="css/EstiloListaCitas.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <img src="img/Logo y titulo.png" alt="" class="logo" />
+                <button class="collapse-button" onclick="toggleCollapse()">
+                    <img src="img/icono_usuario.png" alt="" class="icon-left" />
+                    <img src="img/icono_desplegable.PNG" alt="" class="icon-right" />
+                </button>
+                <div id="collapse-content" class="collapse-content">
+                    <div class="collapse-content">
+                        <div class="profile-header">
+                            <img src="img/default-avatar.jpg" alt="Avatar" class="profile-avatar" />
+                            <span id="user-name">Nombre_Usuario</span>
+                        </div>
+                        <hr />
+                        <ul class="profile-options">
+                            <li>
+                                <a href="mis-citas.html" class="menu-item">
+                                    <img src="img/calendario.png" alt="Mis Citas" class="icon">
+                                    Mis Citas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mi-perfil.html" class="menu-item">
+                                    <img src="img/perfil.png" alt="Mi Perfil" class="icon">
+                                    Mi Perfil
+                                </a>
+                            </li>
+                            <li>
+                                <a style="cursor: pointer;" class="logout menu-item" onclick="logout()">
+                                    <img src="img/salir.png"  alt="Cerrar Sesión" class="icon">
+                                    Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>CITAS</h1>
+            <div class="filters">
+                <div class="left-align">
+                    <label for="fechaConsulta">Fecha de consulta</label>
+                    <input type="date" id="fechaConsulta" name="fechaConsulta"/>
+                </div>
+
+                <div class="right-align">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="TODOS">TODOS</option>
+                        <option value="PENDIENTE">PENDIENTE</option>
+                        <option value="FINALIZADO">FINALIZADO</option>
+                    </select>
+                    <button class="new-reservation-button" onclick="location.href = 'principal1.html'">Nueva Reserva</button>
+                </div>
+            </div>
+
+
+            <!-- Tabla de citas -->
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Código</th>
+                        <th>Nombre de paciente</th>
+                        <th>Servicio</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="citasBody">
+                    <!-- Contenido generado dinámicamente desde JavaScript -->
+                </tbody>
+            </table>
+
+            <!-- Controles de paginación -->
+            <div class="pagination-controls">
+                <div class="records-control">
+                    <label for="recordsPerPage">Registros por página</label>
+                    <select id="recordsPerPage">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+
+                <div class="pagination">
+                    <label>Página</label>
+                    <button id="prevPage"> < </button>
+                    <span id="pageNumber">1</span>
+                    <button id="nextPage"> > </button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="editModal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Editar Cita</h2>
+                    <div class="linea"></div>
+                    <div class="formulario">
+                        <div class="campo">
+                            <label for="edit-codigo">Código</label>
+                            <input type="text" id="edit-codigo" disabled="">
+                        </div>
+                        <div class="campo">
+                            <label for="edit-fecha">Fecha</label>
+                            <input type="date" id="edit-fecha">
+                        </div>
+                        <div class="campo">
+                            <label for="edit-dni">DNI</label>
+                            <input type="text" id="edit-dni">
+                        </div>
+                        <div class="campo">
+                            <label for="edit-celular">Celular</label>
+                            <input type="text" id="edit-celular">
+                        </div>
+                    </div>
+                    <div class="campo1">
+                        <label for="edit-nombre">Nombres</label>
+                        <input id="edit-nombre">
+                    </div>
+                    <div class="campo1">
+                        <label for="edit-servicio">Servicio</label>
+                        <input id="edit-servicio">
+                    </div>
+                    <div class="campo1">
+                        <label for="edit-email">Email</label>
+                        <input id="edit-email">
+                    </div>
+                    <div class="campo">
+                        <label for="edit-observaciones">Observaciones</label>
+                        <textarea id="edit-observaciones" placeholder="Ingresar Observaciones"></textarea>
+                    </div>
+                    <div class="botones">
+                        <button class="button-save"><img src="img/save.png" alt="" style="width: 20px; height: 20px; margin-right: 5px;"/>Guardar</button>
+                    <button class="button-cancel"><img src="img/cancel.png" alt="" style="width: 20px; height: 20px; margin-right: 5px;" />Cancelar</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <script src="js/bienestar/listaCita.js"></script>
+    </body>
+</html>
