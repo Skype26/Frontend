@@ -86,6 +86,11 @@ function openEditModal(id) {
     // Mostrar el modal
     modal.classList.add("active");
 }
+//funcion para ir al html VistaTabla
+function GuadarCambios() {
+    // Redirecciona a la página VistaTabla.html
+    window.location.href = "VistaTabla.html";
+}
 
 // Cerrar el modal
 document.querySelector(".close-btn").addEventListener("click", () => {

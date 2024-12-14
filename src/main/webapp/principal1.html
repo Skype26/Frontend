@@ -15,10 +15,10 @@
         <header class="header">
             <div class="header-content">
                 <img src="img/Logo y titulo.png" alt="" class="logo" />
-                <button class="collapse-button" onclick="toggleCollapse()">
+                <div class="collapse-button" onclick="toggleCollapse()">
                     <img src="img/icono_usuario.png" alt="" class="icon-left" />
                     <img src="img/icono_desplegable.PNG" alt="" class="icon-right" />
-                </button>
+                </div>
                 <div id="collapse-content" class="collapse-content">
                     <!--<div class="dropdown-container">-->
                     <div class="collapse-content">
@@ -147,16 +147,7 @@
             </main>
         </div>
         <script>
-            function toggleCollapse() {
-                const collapseContent = document.getElementById('collapse-content');
-                const iconRight = document.querySelector('.icon-right');
 
-                // Alterna la clase "open" en el contenido
-                collapseContent.classList.toggle('open');
-
-                // Alterna la clase "rotated" en el ícono derecho
-                iconRight.classList.toggle('rotated');
-            }
 
             // Selección de celdas con múltiples selecciones
             const cells = document.querySelectorAll('.horario-table tbody td');
