@@ -6,18 +6,13 @@ body {
 }
 
 .container {
-    max-width: 1250px;
-    margin-left: 45px;
-    margin-top: 45px;
-    margin-bottom: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 main {
-    /*display: grid;
-    grid-template-columns: 1fr 1fr 1fr;*/
-    display: flex; /* Coloca los elementos en fila */
-    /*margin: 0;  Elimina márgenes exteriores del contenedor 
-    padding: 0; /* Asegúrate de que no haya relleno en el contenedor */
+    display: flex;
 }
 
 h1 {
@@ -61,7 +56,7 @@ h4 {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye logo y botón a los extremos */
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -85,6 +80,7 @@ h4 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     gap: 10px; /* Espacio entre los elementos */
+    margin-right: 0; /* Sin margen adicional */
 }
 .collapse-button:hover {
     background-color: #021d42; /* Color más oscuro al pasar el mouse */
@@ -104,7 +100,7 @@ h4 {
 .collapse-content {
     position: absolute; /* Para colocarlo debajo del botón */
     top: 100%;/* Justo debajo del botón */
-    right: 75px;
+    left: 840px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
@@ -113,7 +109,6 @@ h4 {
     transition: max-height 0.3s ease, padding 0.3s ease; /* Animación */
     z-index: 1000;
     width: 200px;
-    height: 192px;
     padding: 0;
 }
 .collapse-content.open {
@@ -128,4 +123,195 @@ h4 {
     display: flex;
     align-items: center; /* Alineación vertical centrada */
     gap: 15px; /* Espaciado entre ícono y texto */
+}
+
+
+/* Clase para ocultar el contenido */
+.hidden {
+    display: none;
+}
+
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+/* Imagen del avatar */
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+/* Nombre del usuario */
+.user-name {
+    font-size: 20px;
+    font:bold;
+    color: #fff;
+}
+/* Línea separadora */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+/* Opciones del menú */
+.profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.profile-options li {
+    margin: 10px 0;
+}
+.profile-options li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+.profile-options li a i {
+    font-size: 16px;
+    color: #555;
+}
+.profile-options li a:hover {
+    color: #007bff;
+}
+.logout {
+    color: #e63946;
+}
+.logout:hover {
+    color: #d32f2f;
+}
+.icon {
+    width: 25px; /* Ajusta el ancho del ícono */
+    height: 25px; /* Ajusta la altura del ícono */
+    vertical-align: middle; /* Asegura que el ícono esté alineado verticalmente con el texto */
+}
+.menu-item {
+    display: flex; /* Asegura que el ícono y el texto estén en la misma línea */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-decoration: none; /* Elimina subrayados */
+    color: #333; /* Ajusta el color del texto */
+    font-size: 14px; /* Tamaño del texto */
+}
+.menu-item:hover {
+    color: #007bff; /* Cambia el color del texto al pasar el cursor */
+}
+
+
+/* Botón de notificaciones */
+.notification-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #032756;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 650px; /* Elimina margen adicional */
+}
+.notification-button:hover {
+    background-color: #021f45; /* Color más oscuro al pasar el cursor */
+}
+
+/* Icono dentro del botón */
+.notification-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+/* Dropdown */
+.notification-dropdown {
+    position: absolute;
+    top: 100%;/* Justo debajo del botón */
+    left: 640px; /* Ajusta según el diseño */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 300px;
+    height: 300px;
+    z-index: 1000;
+}
+
+/* Título */
+.dropdown-title {
+    background-color: #032756;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Lista de notificaciones */
+.notification-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.notification-text {
+    font-size: 12px;
+    color: #333;
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+/* Enlace "Ver más" */
+.view-more {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #032756;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11px;
+    border-top: 1px solid #ddd;
+}
+
+.view-more:hover {
+    background-color: #f8f9fa;
+}
+
+/* Icono dentro del botón */
+.mensaje-icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
 }

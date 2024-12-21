@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Bienestar Universitario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lista Citas</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-        <link href="css/EstiloVistaTabla.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="css/EstiloNotificaciones.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header class="header">
             <div class="header-content">
-                <img src="img/Logo y titulo.png" alt="" class="logo" />
+                <img src="img/Logo y titulo.png" alt="" class="logo"/>
 
                 <!-- Botón de notificaciones -->
                 <button class="notification-button" onclick="toggleNotifications()">
@@ -45,9 +45,10 @@
                 </div>
 
                 <button class="collapse-button" onclick="toggleCollapse()">
-                    <img src="img/icono_usuario.png" alt="" class="icon-left" />
-                    <img src="img/icono_desplegable.PNG" alt="" class="icon-right" />
+                    <img src="img/icono_usuario.png" alt="" class="icon-left"/>
+                    <img src="img/icono_desplegable.PNG" alt="" class="icon-right"/>
                 </button>
+
                 <div id="collapse-content" class="collapse-content hidden">
                     <!--<div class="dropdown-container">-->
                     <div class="profile-header">
@@ -85,34 +86,54 @@
             </div>
         </header>
         <div class="container">
-            <button id="btnRegresar" class="btn-regresar" onclick="regresarPagina()">
-                <span class="icon">←</span> Regresar
-            </button>
+            <main>
+                <div class="contenedor-notificaciones">
+                    <h9>NOTIFICACIONES</h9>
+                    <ul class="lista-notificaciones">
+                        <li class="item-notificacion">
+                            <img src="img/mensaje.png" alt="Icono" class="icono-mensaje">
+                            <div class="contenido-notificacion">
+                                <span class="fecha-notificacion">21 diciembre 2024</span>
+                                <p class="texto-notificacion">¡Se generó un nuevo reporte para descargar!</p>
+                            </div>
+                        </li>
+                        <li class="item-notificacion">
+                            <img src="img/mensaje.png" alt="Icono" class="icono-mensaje">
+                            <div class="contenido-notificacion">
+                                <span class="fecha-notificacion">21 diciembre 2024</span>
+                                <p class="texto-notificacion">Tu cita ha sido programada con éxito.</p>
+                            </div>
+                        </li>
+                        <li class="item-notificacion">
+                            <img src="img/mensaje.png" alt="Icono" class="icono-mensaje">
+                            <div class="contenido-notificacion">
+                                <span class="fecha-notificacion">21 diciembre 2024</span>
+                                <p class="texto-notificacion">Recordatorio: Revisa tu historial de citas.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
         </div>
-
-
-
-        <!-- Tabla de citas -->
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Código</th>
-                    <th>Nombre de paciente</th>
-                    <th>Servicio</th>
-                    <th>Celular</th>
-                    <th>DNI</th>
-                </tr>
-            </thead>
-            <tbody id="citasBody">
-                <!-- Contenido generado dinámicamente desde JavaScript -->
-            </tbody>
-        </table>
-        <script src="js/bienestar/vistatabla.js" type="text/javascript"></script>
         <script>
-                
+            // Notificaciones
+            function toggleNotifications() {
+                const notificationDropdown = document.getElementById("notification-dropdown");
+                notificationDropdown.classList.toggle("hidden");
+            }
+
+            //Collapse
+            function toggleCollapse() {
+                const collapseContent = document.getElementById('collapse-content');
+                collapseContent.classList.toggle("hidden");
+                const iconRight = document.querySelector('.icon-right');
+
+                // Alterna la clase "open" en el contenido
+                collapseContent.classList.toggle('open');
+
+                // Alterna la clase "rotated" en el ícono derecho
+                iconRight.classList.toggle('rotated');
+            }
         </script>
     </body>
 </html>

@@ -7,16 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function logout() {
-    sessionStorage.clear(); 
+    sessionStorage.clear();
     window.location.href = 'index.html';
 }
+//Collapse
 function toggleCollapse() {
-                const collapseContent = document.getElementById('collapse-content');
-                const iconRight = document.querySelector('.icon-right');
+    const collapseContent = document.getElementById('collapse-content');
+    //collapseContent.classList.toggle("hidden");
+    const iconRight = document.querySelector('.icon-right');
 
-                // Alterna la clase "open" en el contenido
-                collapseContent.classList.toggle('open');
+    // Alterna la clase "open" en el contenido
+    collapseContent.classList.toggle('open');
 
-                // Alterna la clase "rotated" en el ícono derecho
-                iconRight.classList.toggle('rotated');
-            }
+    // Alterna la clase "rotated" en el ícono derecho
+    iconRight.classList.toggle('rotated');
+}

@@ -337,118 +337,6 @@ h2 {
 
 
 
-/*
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0); /* Fondo transparente al inicio 
-    transition: background-color 0.3s ease; /* Cambio suave del fondo 
-    z-index: 1000;
-    visibility: hidden; /* Ocultar modal al inicio 
-    opacity: 0;
-}
-
-/* Cuando el modal está activo 
-.modal.activo {
-    visibility: visible;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente al activarse 
-}
-
-/* Contenido del modal 
-.modal-contenido {
-    background: white;
-    width: 430px;
-    height: 230px;
-    border-radius: 10px;
-    padding: 40px;
-    text-align: center;
-    position: relative;
-    transform: translateY(-100%); /* Fuera de la pantalla 
-    transition: transform 0.5s ease; /* Deslizamiento suave 
-    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-}
-
-.modal.activo .modal-contenido {
-    transform: translateY(0); /* Posición centrada
-}
-
-/* Imagen dentro del modal 
-.modal-imagen {
-    width: 150px;
-    height: 120px;
-}
-
-/* Título del modal 
-.modal-titulo {
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 32px;
-    color: #032756;
-    margin-bottom: 10px;
-}
-
-/* Texto del modal 
-.modal-texto {
-    font-family: "Roboto";
-    font-size: 16px;
-    color: black;
-}
-
-/* Botón de cerrar 
-.modal-cerrar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 40px;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-*/
-
-/* Modal 
-.modal {
-    display: none; /* Ocultar el modal por defecto 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hidden {
-    display: none;
-}
-
-.close-btn {
-    float: right;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top: -10px;
-} */
-
-
 .modal {
     display: flex;
     position: fixed;
@@ -489,14 +377,6 @@ h2 {
     font-size: 20px;
     margin-top: -10px;
 }
-
-
-.hidden {
-    display: none;
-}
-
-
-
 
 
 .linea {
@@ -588,4 +468,200 @@ h2 {
     text-align: right;
     padding-right: 10px;
     padding-top: 15px;
+}
+
+
+
+
+/* Clase para ocultar el contenido */
+.hidden {
+    display: none;
+}
+
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+/* Imagen del avatar */
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+/* Nombre del usuario */
+.user-name {
+    font-size: 20px;
+    font:bold;
+    color: #fff;
+}
+/* Línea separadora */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+/* Opciones del menú */
+.profile-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.profile-options li {
+    margin: 10px 0;
+}
+.profile-options li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+.profile-options li a i {
+    font-size: 16px;
+    color: #555;
+}
+.profile-options li a:hover {
+    color: #007bff;
+}
+.logout {
+    color: #e63946;
+}
+.logout:hover {
+    color: #d32f2f;
+}
+.icon {
+    width: 25px; /* Ajusta el ancho del ícono */
+    height: 25px; /* Ajusta la altura del ícono */
+    vertical-align: middle; /* Asegura que el ícono esté alineado verticalmente con el texto */
+}
+.menu-item {
+    display: flex; /* Asegura que el ícono y el texto estén en la misma línea */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-decoration: none; /* Elimina subrayados */
+    color: #333; /* Ajusta el color del texto */
+    font-size: 14px; /* Tamaño del texto */
+}
+.menu-item:hover {
+    color: #007bff; /* Cambia el color del texto al pasar el cursor */
+}
+
+
+
+
+
+
+/* Botón de notificaciones */
+.notification-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #032756;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 650px; /* Elimina margen adicional */
+}
+.notification-button:hover {
+    background-color: #021f45; /* Color más oscuro al pasar el cursor */
+}
+
+/* Icono dentro del botón */
+.notification-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+/* Dropdown */
+.notification-dropdown {
+    position: absolute;
+    top: 100%;/* Justo debajo del botón */
+    left: 640px; /* Ajusta según el diseño */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 300px;
+    height: 300px;
+    z-index: 1000;
+}
+
+/* Título */
+.dropdown-title {
+    background-color: #032756;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Lista de notificaciones */
+.notification-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.notification-text {
+    font-size: 12px;
+    color: #333;
+    margin: 0;
+}
+
+/* Enlace "Ver más" */
+.view-more {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #032756;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11px;
+    border-top: 1px solid #ddd;
+}
+
+.view-more:hover {
+    background-color: #f8f9fa;
+}
+
+/* Icono dentro del botón */
+.mensaje-icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
 }

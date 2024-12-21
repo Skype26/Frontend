@@ -1,8 +1,19 @@
+// Notificaciones
+function toggleNotifications() {
+    const notificationDropdown = document.getElementById("notification-dropdown");
+    notificationDropdown.classList.toggle("hidden");
+}
+
+//Collapse
 function toggleCollapse() {
     const collapseContent = document.getElementById('collapse-content');
+    collapseContent.classList.toggle("hidden");
     const iconRight = document.querySelector('.icon-right');
 
+    // Alterna la clase "open" en el contenido
     collapseContent.classList.toggle('open');
+
+    // Alterna la clase "rotated" en el ícono derecho
     iconRight.classList.toggle('rotated');
 }
 

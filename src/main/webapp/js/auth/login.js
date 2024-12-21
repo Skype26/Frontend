@@ -92,7 +92,7 @@ async function processForm(token) {
         }
     } catch (error) {
         console.error('Error al consumir la API:', error);
-        alert('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo.');
+        alert('Los datos ingresados son incorrectos. Por favor, inténtalo de nuevo.');
     }
 }
 
